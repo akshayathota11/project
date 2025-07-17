@@ -1,11 +1,11 @@
 import pandas as pd
 import joblib
 
-# Load trained model and feature list
+# Loading training model
 model = joblib.load("delay_predictor_rf.pkl")
 features = joblib.load("model_features.pkl")
 
-#  Example input: one passenger’s trip details
+#  one passenger trip 
 sample_input = {
     'Departure Station': 'London Kings Cross',
     'Arrival Destination': 'Edinburgh Waverley',
@@ -22,7 +22,6 @@ sample_input = {
 # Convert to DataFrame
 input_df = pd.DataFrame([sample_input])
 
-# One-hot encode
 input_encoded = pd.get_dummies(input_df)
 
 # Align columns with training features
