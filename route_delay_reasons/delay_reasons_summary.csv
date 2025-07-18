@@ -1,0 +1,11 @@
+Route,Signal Failure,Signal failure,Staff Shortage,Staffing,Technical Issue,Traffic,Weather,Weather Conditions
+Birmingham New Street → Manchester Piccadilly,0,0,0,0,96,0,0,0
+Edinburgh Waverley → London Kings Cross,0,0,0,51,0,0,0,0
+Liverpool Lime Street → London Euston,0,24,4,45,139,40,499,29
+Liverpool Lime Street → Manchester Piccadilly,20,0,0,0,87,0,0,0
+London Euston → Birmingham New Street,18,106,18,0,0,0,100,0
+London Kings Cross → York,22,62,0,0,47,0,0,0
+London Paddington → Reading,0,0,33,0,33,0,0,0
+Manchester Piccadilly → Leeds,64,0,0,0,0,0,0,0
+Manchester Piccadilly → Liverpool Lime Street,67,13,110,14,18,31,58,43
+Manchester Piccadilly → London Euston,0,0,0,31,48,15,67,79
