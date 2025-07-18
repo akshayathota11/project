@@ -62,4 +62,13 @@ plt.savefig("feature_importance_rf.png")
 plt.show()
 
 
+from sklearn.metrics import classification_report
+print("\n Classification Report:")
+print(classification_report(y_test, y_pred))
+
+# Save model
+import joblib
+joblib.dump(model, "delay_predictor_rf.pkl")
+joblib.dump(X.columns.tolist(), "model_features.pkl")
+print(" Model and features saved successfully!")
 
