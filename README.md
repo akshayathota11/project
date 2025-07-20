@@ -23,13 +23,15 @@ Gain early insights to guide machine learning and decision-making
 
 # Model Training Summary
 You trained a Random Forest Classifier to predict whether a train journey would be delayed.
-Target: Is_Delayed (1 = delayed, 0 = on time)
-Preprocessing: Datetime conversion, feature extraction, one-hot encoding
+-Target: Is_Delayed (1 = delayed, 0 = on time)
+-Preprocessing: Datetime conversion, feature extraction, one-hot encoding
 Model Evaluation:
-Accuracy: ~97%
-ROC AUC Score: ~0.86 (very good)
-Classification report and confusion matrix
-Feature importance analysis
+-Accuracy: ~97%
+-ROC AUC Score: ~0.86
+We Use Confusion Matrix and Feature Importance
+-Confusion Matrix:Helps evaluate the model's performance by showing how well it distinguishes between delayed and on-time journeys 
+-Feature Importance:Identifies which factors (e.g., station, time, ticket type) have the most influence on delay prediction, making the model more explainable and useful for decision-making.
+
 
 
 # Tools Used
@@ -38,18 +40,22 @@ Feature importance analysis
 - Matplotlib
 - Seaborn
 
-#Python Libraries:pandas – for data preprocessing and manipulation
+# Python Libraries:
+pandas – for data preprocessing and manipulation
 scikit-learn – for clustering (KMeans), feature scaling, PCA, and silhouette analysis
 matplotlib – for plotting scatter plots and silhouette graphs
 seaborn – for high-level cluster visualizations and bar plot
 
-#Machine Learning Techniques:
+# Machine Learning Techniques:
 K-Means Clustering
 PCA (Principal Component Analysis)
 Silhouette Score Evaluation
 Data Engineering Techniques:
 One-hot Encoding (pd.get_dummies)
 Feature Scaling (StandardScaler)
+RandomForestClassifier – for classification 
+KMeans – for clustering journeys
+train_test_split – for splitting data into train/test sets
 
 # Visualization Tools
 -Matplotlib
