@@ -21,7 +21,7 @@ df['Departure Time'] = pd.to_datetime(df['Departure Time'], format='%H:%M:%S', e
 all_delayed = df[df['Is_Delayed'] == 1]
 
 # Step 5: Display sample of delayed trains
-print(f"\n✅ Total delayed journeys: {len(all_delayed)}\n")
+print(f"\n Total delayed journeys: {len(all_delayed)}\n")
 print("🎯 Sample of delayed journeys:")
 print(all_delayed[['Route', 'Date of Journey', 'Departure Time', 'Ticket Type']].head(20))
 
@@ -49,7 +49,7 @@ reason_col_candidates = ['Reason for Delay', 'Delay Reason', 'Reason']
 reason_col = next((col for col in reason_col_candidates if col in df.columns), None)
 
 if reason_col is None:
-    raise ValueError("❌ Could not find a 'Reason for Delay' column in the dataset.")
+    raise ValueError(" Could not find a 'Reason for Delay' column in the dataset.")
 
 # Step 3: Filter only delayed journeys
 delayed_df = df[df['Is_Delayed'] == 1]
@@ -74,7 +74,7 @@ output_path = "visuals/all_delay_reasons_pie.png"
 plt.savefig(output_path)
 plt.show()
 
-print(f"\n✅ Pie chart saved to: {output_path}")
+print(f"\n Pie chart saved to: {output_path}")
 
 #code for all repeated delayed trains
 import pandas as pd
@@ -120,38 +120,5 @@ plt.savefig("repeated_route_delays.png")
 plt.show()
 
 
-#pie chart for most delayed trains
-import pandas as pd
-import matplotlib.pyplot as plt
-import os
-
-# Load the summary file generated earlier
-summary_path = "route_delay_reasons/delay_reasons_summary.csv"
-if not os.path.exists(summary_path):
-    raise FileNotFoundError(f"❌ File not found: {summary_path}. Please generate it first.")
-
-# Load the delay reasons summary
-summary = pd.read_csv(summary_path, index_col=0)
-
-# Sum delay reasons across all top routes
-overall_reasons = summary.sum().sort_values(ascending=False)
-
-# Optionally group smaller categories into "Others"
-top_n = overall_reasons.head(6)  # adjust number of top reasons shown
-top_n['Others'] = overall_reasons.iloc[6:].sum()
-
-# Create the pie chart
-plt.figure(figsize=(8, 8))
-top_n.plot(kind='pie', autopct='%1.1f%%', startangle=140, colors=plt.cm.Pastel1.colors)
-plt.title("Overall Delay Reasons on Top Routes")
-plt.ylabel("")  # Hide y-label
-plt.tight_layout()
-
-# Save pie chart
-output_path = "route_delay_reasons/pie_chart_delay_reasons.png"
-plt.savefig(output_path)
-plt.show()
-
-print(f"\n✅ Pie chart saved to: {output_path}")
 
 
