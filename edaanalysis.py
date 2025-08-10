@@ -106,4 +106,3 @@ plt.ylabel("Reason for Delay")
 plt.tight_layout()
 plt.savefig("delay_reason_heatmap.png")
 plt.show()
-
